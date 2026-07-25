@@ -27,7 +27,7 @@ body {
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  align-items: baseline;
+  align-items: center;  /* changed from baseline to center */
   gap: 14px;
 }
 
@@ -56,6 +56,40 @@ body {
   font-size: 13px;
   color: #9AA5C0;
   font-weight: 500;
+}
+
+/* Language switcher dropdown */
+.lang-switcher {
+  margin-left: auto;
+}
+
+.lang-select {
+  padding: 8px 36px 8px 14px;
+  border: 2px solid #E8A33D;  /* bright gold border so you can't miss it */
+  border-radius: 8px;
+  background: #1e3a8a;  /* slightly lighter blue for contrast */
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  min-width: 140px;
+}
+
+.lang-select:hover {
+  border-color: #fbbf24;
+  background: #1e40af;
+}
+
+.lang-select:focus {
+  outline: 2px solid #E8A33D;
+  outline-offset: 2px;
 }
 
 /* Shell */
@@ -342,4 +376,41 @@ tbody td {
   color: #8A91A3;
   font-size: 13.5px;
   font-style: italic;
+}
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #6B7386;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-select {
+  width: 100%;
+  max-width: 220px;
+  padding: 8px 32px 8px 12px;
+  border: 1px solid #DDD8CB;
+  border-radius: 8px;
+  background: #FBFAF7;
+  color: #2B3245;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232B3245' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+.form-select:focus {
+  outline: 2px solid #E8A33D;
+  outline-offset: 1px;
 }
