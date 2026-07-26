@@ -17,46 +17,63 @@ VALID_CATEGORIES = [
     "Other"
 ]
 
+
 import json
 
 def classify_grievance(text: str, language: str = "en"):
-    # Language hint for Gemini
     if language == "te":
-        lang_hint = "The user wrote this complaint in Telugu. Understand it in Telugu, but return the category name in English only."
+        lang_hint = "The user wrote this complaint in Telugu. Understand it in Telugu, but return all values in English only."
     elif language == "hi":
-        lang_hint = "The user wrote this complaint in Hindi. Understand it in Hindi, but return the category name in English only."
+        lang_hint = "The user wrote this complaint in Hindi. Understand it in Hindi, but return all values in English only."
     else:
         lang_hint = "The user wrote this complaint in English."
 
     prompt = f"""{lang_hint}
 
 Analyze the following civic grievance and respond ONLY with valid JSON in this exact format:
-{{"category": "<exactly one of: {', '.join(VALID_CATEGORIES)}>", "location": "<any specific location, area, block, street, or landmark mentioned in the complaint, or 'Unspecified' if none is mentioned>"}}
+{{
+  "category": "<exactly one of: {', '.join(VALID_CATEGORIES)}>",
+  "location": "<specific location, area, block, street, or landmark mentioned, or 'Unspecified' if none>",
+  "priority_score": <integer 1-5, where 5 = urgent/safety risk (e.g. exposed wiring, sewage overflow near school), 1 = minor/cosmetic issue>,
+  "sentiment_score": <integer 1-5, where 1 = calm/neutral tone, 5 = very frustrated/angry tone>,
+  "department": "<likely responsible department: Water Board, Electricity Board, Municipal Corporation, Public Works, Police, Health Department, Education Department, or 'Unspecified'>",
+  "mentioned_officer": "<specific officer name or designation if mentioned in the complaint, otherwise 'None'>",
+  "predicted_resolution_days": <integer estimate of days to resolve based on severity, typically 1-30>
+}}
 
-Return ONLY the JSON object, nothing else — no markdown, no explanation.
+Return ONLY the JSON object, no markdown, no explanation.
 
 Complaint: {text}"""
 
     try:
         response = model.generate_content(prompt)
         raw = response.text.strip()
-
-        # Clean up markdown formatting Gemini sometimes adds
         raw = raw.replace("```json", "").replace("```", "").strip()
 
         parsed = json.loads(raw)
-        category = parsed.get("category", "Other").strip()
-        location = parsed.get("location", "Unspecified").strip()
 
-        # Fallback if Gemini returns something unexpected
-        if category not in VALID_CATEGORIES:
-            category = "Other"
+        if parsed.get("category") not in VALID_CATEGORIES:
+            parsed["category"] = "Other"
+        parsed.setdefault("location", "Unspecified")
+        parsed.setdefault("priority_score", 3)
+        parsed.setdefault("sentiment_score", 3)
+        parsed.setdefault("department", "Unspecified")
+        parsed.setdefault("mentioned_officer", "None")
+        parsed.setdefault("predicted_resolution_days", 7)
 
-        return category, location
+        return parsed
 
     except Exception as e:
         print("Classification error:", e)
-        return "Other", "Unspecified"
+        return {
+            "category": "Other",
+            "location": "Unspecified",
+            "priority_score": 3,
+            "sentiment_score": 3,
+            "department": "Unspecified",
+            "mentioned_officer": "None",
+            "predicted_resolution_days": 7
+        }
 
 def chatbot_response(question: str, context_data: str, language: str = "en"):
     lang_hint = {
