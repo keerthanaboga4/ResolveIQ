@@ -4,7 +4,7 @@ from gemini_service import classify_grievance, chatbot_response
 from bigquery_service import (
     save_grievance, get_all_grievances, get_category_stats,
     detect_hotspots, detect_smart_hotspots, get_recent_complaints_summary,
-    get_corruption_alerts, get_district_stats, get_systemic_issues
+    get_corruption_alerts, get_district_stats, get_systemic_issues, update_status
 )
 
 app = FastAPI()
@@ -26,6 +26,10 @@ def submit_grievance(text: str, citizen_name: str = "", phone: str = "", distric
     parsed = classify_grievance(text, language)
     saved = save_grievance(text, citizen_name, phone, district, state, parsed, language)
     return saved
+
+@app.post("/update-status")
+def update_status_endpoint(grievance_id: str, new_status: str):
+    return update_status(grievance_id, new_status)
 
 @app.get("/get-grievances")
 def get_grievances():

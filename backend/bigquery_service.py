@@ -2,6 +2,7 @@ from google.cloud import bigquery
 import uuid
 from datetime import datetime
 import hashlib
+from datetime import datetime
 
 client = bigquery.Client(project="resolve-iq-503213")
 table_id = "resolve-iq-503213.grievance_data.grievances"
@@ -224,4 +225,26 @@ def get_assigned_officer(mentioned_officer, department, district):
         return mentioned_officer
     base = DEFAULT_OFFICERS.get(department, "General Grievance Cell")
     return f"{base} - {district}" if district else base
+
+
+def update_status(grievance_id: str, new_status: str):
+    query = f"""
+        UPDATE `{table_id}`
+        SET status = @new_status,
+            resolved_at = @resolved_at
+        WHERE id = @grievance_id
+    """
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ScalarQueryParameter("new_status", "STRING", new_status),
+            bigquery.ScalarQueryParameter(
+                "resolved_at", "TIMESTAMP",
+                datetime.utcnow().isoformat() if new_status == "Resolved" else None
+            ),
+            bigquery.ScalarQueryParameter("grievance_id", "STRING", grievance_id),
+        ]
+    )
+    client.query(query, job_config=job_config).result()
+    return {"id": grievance_id, "status": new_status}
+
 

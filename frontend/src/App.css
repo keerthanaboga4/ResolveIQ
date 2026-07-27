@@ -889,3 +889,10 @@ tbody td {
   font-size: 14px;
   line-height: 1.5;
 }
+.stat-clickable { cursor: pointer; border: 1px solid transparent; background: inherit; font: inherit; text-align: left; }
+.stat-clickable:hover { border-color: #16233F33; }
+.stat-active { border-color: #16233F; box-shadow: 0 0 0 2px #16233F22; }
+.stat-icon-ok { color: #1a7f37; }
+.resolve-btn { padding: 4px 10px; border: 1px solid #16233F; background: white; color: #16233F; border-radius: 6px; font-size: 12px; cursor: pointer; }
+.resolve-btn:hover { background: #16233F; color: white; }
+.resolve-btn:disabled { opacity: 0.5; cursor: not-allowed; }
