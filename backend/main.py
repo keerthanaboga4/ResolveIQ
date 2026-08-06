@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from gemini_service import classify_grievance, chatbot_response
-from bigquery_service import (
+from database_service import (
     save_grievance, get_all_grievances, get_category_stats,
     detect_hotspots, detect_smart_hotspots, get_recent_complaints_summary,
     get_corruption_alerts, get_district_stats, get_systemic_issues, update_status
 )
+
 
 app = FastAPI()
 
