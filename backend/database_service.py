@@ -146,7 +146,7 @@ def detect_smart_hotspots():
 
 
 def get_recent_complaints_summary(limit: int = 50):
-    result = client.table("grievances").select("text, category, location, status").order("created_at", desc=True).limit(limit).execute()
+    result = client.table("grievances").select("text, category, location, district, status").order("created_at", desc=True).limit(limit).execute()
     return result.data
 
 

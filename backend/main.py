@@ -52,16 +52,21 @@ def smart_hotspots():
 def chatbot(question: str, language: str = "en"):
     stats = get_category_stats()
     hotspots_data = detect_smart_hotspots()
+    district_data = get_district_stats()
     recent_complaints = get_recent_complaints_summary(50)
+    
     complaints_text = "\n".join([
-        f"- [{c['category']}] {c['text']} (Location: {c['location']}, Status: {c['status']})"
+        f"- [{c['category']}] {c['text']} (Location: {c['location']}, District: {c.get('district') or 'Unspecified'}, Status: {c['status']})"
         for c in recent_complaints
     ])
+    
     context = f"""Category statistics: {stats}
 Hotspots: {hotspots_data}
+District statistics: {district_data}
 
 Individual complaints:
 {complaints_text}"""
+    
     answer = chatbot_response(question, context, language)
     return {"answer": answer}
 
