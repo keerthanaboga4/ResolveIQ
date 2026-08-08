@@ -1,1 +1,1 @@
-export const API_URL = "https://resolveiq-backend-312937988421.us-central1.run.app";
+export const API_URL = "https://resolveiq-prct.onrender.com";
