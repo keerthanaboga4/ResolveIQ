@@ -2,30 +2,30 @@
 
 <div align="center">
 
-![ResolveIQ Banner Placeholder](https://img.shields.io/badge/ResolveIQ-Civic_Grievance_Intelligence-008080?style=for-the-badge&logo=googlecloud&logoColor=white)
+![ResolveIQ Banner](https://img.shields.io/badge/ResolveIQ-Civic_Grievance_Intelligence-008080?style=for-the-badge&logo=fastapi&logoColor=white)
 
   <h3><i>Transforming raw citizen complaints into automated pattern detection, real-time fraud alerts, and officer accountability at scale.</i></h3>
 
   <p align="center">
     <a href="#-short-project-overview">Overview</a> •
+    <a href="#-live-demo-input--output-workflow">Live Input/Output Demo</a> •
     <a href="#-problem-statement">Problem Statement</a> •
     <a href="#-solution">Solution</a> •
     <a href="#-key-features">Key Features</a> •
     <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-project-workflow">Workflow</a> •
     <a href="#-system-architecture">Architecture</a> •
     <a href="#-api-endpoints">API Docs</a>
   </p>
 
   <!-- Badges Section -->
   <p align="center">
-    <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version" />
+    <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version" />
     <img src="https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-    <img src="https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Client" />
-    <img src="https://img.shields.io/badge/Google_Cloud_Run-Hosted-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Google Cloud Run" />
-    <img src="https://img.shields.io/badge/Google_BigQuery-Data_Warehouse-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white" alt="Google BigQuery" />
-    <img src="https://img.shields.io/badge/Gemini_2.5_Flash-Vertex_AI-8E44AD?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini 2.5 Flash" />
+    <img src="https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19" />
+    <img src="https://img.shields.io/badge/Groq_API-Llama_3.3_70B-F34F29?style=for-the-badge&logo=groq&logoColor=white" alt="Groq Llama 3.3 70B" />
+    <img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
     <img src="https://img.shields.io/badge/NVIDIA_RAPIDS-9.6x_GPU_Speedup-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="NVIDIA RAPIDS" />
+    <img src="https://img.shields.io/badge/Docker-3.11_Slim-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
   </p>
 
 </div>
@@ -35,6 +35,7 @@
 ## 📋 Table of Contents
 
 - [Short Project Overview](#-short-project-overview)
+- [Live Demo: Input & Output Workflow](#-live-demo-input--output-workflow)
 - [Problem Statement](#-problem-statement)
 - [Solution](#-solution)
 - [Key Features](#-key-features)
@@ -56,10 +57,36 @@
 
 **ResolveIQ** is an end-to-end, AI-driven civic grievance resolution platform designed to modernize public administration and officer accountability. Traditional complaint systems operate as static storage repositories where complaints sit unread in manual queues. ResolveIQ transforms raw citizen feedback into actionable intelligence in real time.
 
-By combining **Google Gemini 2.5 Flash via Vertex AI**, **Google BigQuery**, and **NVIDIA RAPIDS cuDF GPU acceleration**, ResolveIQ automatically parses native-language citizen reports (English, Hindi, Telugu), clusters recurring municipal infrastructure failures, calculates continuous officer corruption risk scores, and powers an interactive, data-grounded conversational chatbot.
+By combining **Groq Cloud API (Llama 3.3 70B)**, **Supabase PostgreSQL**, and **NVIDIA RAPIDS cuDF GPU acceleration**, ResolveIQ automatically parses native-language citizen reports (English, Hindi, Telugu), clusters recurring municipal infrastructure failures, calculates continuous officer corruption risk scores, and powers an interactive, data-grounded conversational chatbot.
 
-![System Overview](About.png)
-*Figure 1: ResolveIQ System Overview Portal displaying architecture, features, and platform capabilities.*
+![About ResolveIQ](About.png)
+*Figure 1: About ResolveIQ Portal — AI classification overview, multilingual features, smart hotspot detection, and conversational assistant.*
+
+---
+
+## 📸 Live Demo: Input & Output Workflow
+
+ResolveIQ provides a frictionless experience for citizens and municipal administrators. A citizen simply describes an issue in plain, natural language without navigating complex municipal taxonomies, and the AI instantly processes, categorizes, routes, and scores the priority of the grievance.
+
+### 📥 1. Input: Natural Language Complaint Submission
+Citizens input their contact info and describe their grievance in natural language (English, Hindi, or Telugu). No predefined technical category selection is required.
+
+![Grievance Input](Input.png)
+*Figure 2 (Input): User entering complaint description: "Raw sewage is overflowing from a broken manhole on Ameerpet Main Road right near the Metro Station lift."*
+
+---
+
+### 📤 2. Output: Instant AI Extraction & Dynamic Routing Result
+Upon submission, the underlying **Llama 3.3 70B AI Engine via Groq** instantly analyzes the text, assigns the appropriate infrastructure department, routes the complaint to the local duty officer, and computes a priority score based on public safety risk.
+
+![Grievance Output](output.png)
+*Figure 3 (Output): Instant AI Classification Result displaying Category: Sewage and Drainage, Assigned Officer: Municipal Duty Officer - Hyderabad, and Priority Score: 5 / 5.*
+
+| Output Field | AI Extracted Value | Impact / Automated Action |
+| :--- | :--- | :--- |
+| 🏷️ **Classified As** | `Sewage and Drainage` | Categorized instantly without manual staff intervention |
+| 👤 **Assigned To** | `Municipal Duty Officer - Hyderabad` | Auto-routed to the specific local authority responsible |
+| 🚨 **Priority Rating** | `5 / 5 (Urgent)` | Escalated to top queue for high public health/safety hazard |
 
 ---
 
@@ -79,9 +106,9 @@ Every day, citizens report municipal infrastructure issues—burst water pipes, 
 
 ResolveIQ converts passive complaint intake into an active, intelligent governance pipeline:
 
-- **Instant Multilingual Parsing:** Reads raw complaints written natively in English, Hindi, or Telugu and extracts structured metadata in seconds using Gemini 2.5 Flash.
+- **Instant Multilingual Parsing:** Reads raw complaints written natively in English, Hindi, or Telugu and extracts structured metadata in seconds using Llama 3.3 70B.
 - **Automatic Systemic Clustering:** Groups co-located grievances in the same category under a shared `cluster_id` and flags `is_systemic: true`.
-- **Officer Accountability Engine:** Tracks mentions of officials across complaint texts to compute real-time corruption risk scores and trigger automated fraud alerts.
+- **Officer Accountability Engine:** Tracks mentions of officials across complaint texts to compute real-time corruption risk scores and trigger automated fraud alerts in Supabase.
 - **Data-Grounded AI Chatbot:** Enables citizens and administrators to ask natural-language questions answered live directly from current database records.
 - **Proven High Scalability:** Leverages NVIDIA RAPIDS cuDF GPU acceleration to deliver a **9.6× speedup** over CPU pandas at 5 million complaint logs.
 
@@ -89,57 +116,54 @@ ResolveIQ converts passive complaint intake into an active, intelligent governan
 
 ## ✨ Key Features
 
-### 📊 1. Live Executive Analytics Dashboard & Resolution Tracking
-A unified administrative dashboard displaying total complaints, pending tickets, active smart hotspots, category distributions, and district-level metrics powered by live BigQuery data. Officials can mark issues resolved with a single click, instantly updating status flags and stamping immutable timestamps.
+### 📊 1. Live Executive Analytics Dashboard & Hotspot Detection
+A unified administrative dashboard displaying total complaints, pending tickets, resolved counts, flagged alerts, and active smart hotspots powered by live Supabase queries.
 
-![Live Dashboard](DashBoard.png)
-*Figure 2: Executive Dashboard featuring live complaint statistics, active hotspots, category charts, and district priorities.*
-
----
-
-### 🧠 2. AI Multilingual Extraction & Priority Scoring
-Processes unstructured feedback in English, Hindi, or Telugu to extract:
-- **Category & Department Routing:** (Water Supply, Public Works, Sanitation, Electricity)
-- **Priority & Urgency Rating:** Automated severity scoring.
-- **Sentiment & Officer Mentions:** Extraction of named officials from complaint text.
-- **Estimated Resolution Timeframe:** AI-driven repair time estimation.
-
-![Priority Scoring](priority_score.png)
-*Figure 3: AI Classification and Priority Scoring interface displaying automated extraction details.*
+![Live Dashboard & Hotspots](DashBoard.png)
+*Figure 4: Executive Dashboard displaying live complaint metrics (52 Total, 48 Pending, 4 Resolved, 4 Flagged) and automated smart hotspots (Ameerpet, Kondapur, Krishnanagar).*
 
 ---
 
-### 🛡️ 3. Officer Accountability & Fraud Alert Engine
-Tracks complaints mentioning specific officials over time:
-- **Continuous Risk Scoring:** Calculates corruption risk based on the frequency of misconduct mentions.
-- **Performance Grading:** Automatically assigns grades (**Good**, **Average**, **Poor**).
-- **Automated Fraud Alerts:** Generates high-priority alert cards when risk scores cross defined safety thresholds.
+### 📍 2. District Breakdown & Urgency Analytics
+Computes aggregate complaint volumes and average urgency scores across regional districts, allowing administrators to allocate municipal resources where bottlenecks are highest.
 
-![Fraud Alerts](Fraud_Alerts.png)
-*Figure 4: Fraud Alerts and Officer Accountability Panel displaying high-risk officer scores and systemic issue clusters.*
+![Complaints by District](district_stats.png)
+*Figure 5: District Grievance Aggregation displaying complaint totals and average priority urgency across Hyderabad, Jagtial, Warangal, and Amaravathi.*
 
 ---
 
-### 🤖 4. Live-Grounded Conversational Chatbot
-An interactive RAG chatbot powered by Vertex AI allowing users to query live grievance database telemetry in natural language.
+### 🛡️ 3. Corruption Risk & Officer Watchlist Engine
+Tracks complaints citing specific officials over time, computing real-time risk scores and assigning performance grades (**Good**, **Average**, **Poor**) to flag repeating misconduct.
+
+![Corruption Risk Watchlist](Fraud_Alerts.png)
+*Figure 6: Corruption Risk Officer Watchlist displaying officer risk scores, department assignments, and automated performance grades.*
+
+---
+
+### 🤖 4. Live-Grounded Conversational AI Chatbot
+An interactive RAG chatbot powered by Groq Llama 3.3 70B allowing citizens and officials to query live database telemetry in plain, natural language.
 
 ![Grounded Chatbot](Chatbot.png)
-*Figure 5: Conversational AI Chatbot answering questions grounded directly in live BigQuery complaint records.*
+*Figure 7: Data-Grounded Conversational AI Chatbot answering a query about high-risk officers (Officer Ramesh Reddy, Officer Govardhan) directly from live complaint telemetry.*
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology | Badge | Role / Rationale |
-| :--- | :--- | :--- | :--- |
-| **Frontend** | React 18 | ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) | Fast, component-driven client architecture |
-| **Routing** | React Router 6 | ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white) | Multi-page client navigation |
-| **Data Viz** | Recharts | ![Recharts](https://img.shields.io/badge/Recharts-22B5BF?style=flat-square&logo=chartdotjs&logoColor=white) | Interactive dashboard charts & statistics |
-| **Icons** | Lucide React | ![Lucide](https://img.shields.io/badge/Lucide_Icons-F54E00?style=flat-square&logo=lucide&logoColor=white) | Consistent vector iconography |
-| **Backend** | FastAPI | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) | High-performance async REST API framework |
-| **AI / LLM** | Gemini 2.5 Flash (Vertex AI) | ![Gemini](https://img.shields.io/badge/Gemini_2.5_Flash-8E44AD?style=flat-square&logo=googlegemini&logoColor=white) | Zero-shot multilingual extraction & RAG chatbot |
-| **Database** | Google BigQuery | ![BigQuery](https://img.shields.io/badge/Google_BigQuery-4285F4?style=flat-square&logo=googlebigquery&logoColor=white) | Serverless real-time data warehouse |
-| **GPU Engine**| NVIDIA RAPIDS (cuDF) | ![NVIDIA](https://img.shields.io/badge/NVIDIA_RAPIDS-76B900?style=flat-square&logo=nvidia&logoColor=white) | GPU-accelerated data processing & analytics pipeline |
+| Layer | Technology | Version / Spec | Badge | Role / Rationale |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frontend UI** | React | `v19.2.8` | ![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=flat-square&logo=react&logoColor=black) | Component-based, fast single-page client architecture |
+| **Client Routing** | React Router DOM | `v7.18.1` | ![React Router](https://img.shields.io/badge/React_Router-7.18.1-CA4245?style=flat-square&logo=reactrouter&logoColor=white) | Modern multi-page routing and navigation |
+| **HTTP Client** | Axios | `v1.18.1` | ![Axios](https://img.shields.io/badge/Axios-1.18.1-5A29E4?style=flat-square&logo=axios&logoColor=white) | Asynchronous API client for backend communication |
+| **Multilingual (i18n)** | i18next / react-i18next | `v23.16.8 / v13.5.0` | ![i18next](https://img.shields.io/badge/i18next-23.16.8-26A69A?style=flat-square&logo=i18next&logoColor=white) | Native language detection & switching (English, Hindi, Telugu) |
+| **Data Viz** | Recharts | `v3.10.0` | ![Recharts](https://img.shields.io/badge/Recharts-3.10.0-22B5BF?style=flat-square&logo=chartdotjs&logoColor=white) | Dynamic analytical charts & metric visualizations |
+| **Icons** | Lucide React | `v1.27.0` | ![Lucide](https://img.shields.io/badge/Lucide-1.27.0-F54E00?style=flat-square&logo=lucide&logoColor=white) | Clean vector icon system |
+| **Backend API** | FastAPI | Python `3.11+` | ![FastAPI](https://img.shields.io/badge/FastAPI-Python_3.11-009688?style=flat-square&logo=fastapi&logoColor=white) | High-performance async REST backend server |
+| **AI / LLM Engine** | Groq Cloud API | `llama-3.3-70b-versatile` | ![Groq](https://img.shields.io/badge/Groq_API-Llama_3.3_70B-F34F29?style=flat-square&logo=groq&logoColor=white) | Ultra-fast zero-shot JSON extraction & grounded chatbot |
+| **Database** | Supabase | PostgreSQL / PostgREST | ![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=flat-square&logo=supabase&logoColor=white) | Real-time database storing grievances, officers, & fraud alerts |
+| **GPU Analytics** | NVIDIA RAPIDS cuDF | `cudf-cu12` (CUDA 12) | ![NVIDIA](https://img.shields.io/badge/NVIDIA_RAPIDS-cuDF_cu12-76B900?style=flat-square&logo=nvidia&logoColor=white) | GPU dataframe processing pipeline (9.6x speedup) |
+| **Environment** | python-dotenv | Python package | ![dotenv](https://img.shields.io/badge/python--dotenv-Config-ECD53F?style=flat-square&logo=python&logoColor=black) | Secure API key & database URI management |
+| **Containerization** | Docker | `python:3.11-slim` | ![Docker](https://img.shields.io/badge/Docker-3.11_Slim-2496ED?style=flat-square&logo=docker&logoColor=white) | Lightweight container deployment with Uvicorn |
 
 ---
 
@@ -147,15 +171,15 @@ An interactive RAG chatbot powered by Vertex AI allowing users to query live gri
 
 ```mermaid
 graph LR
-    A[Citizen Input] -->|English / Hindi / Telugu| B[AI Extraction Engine]
-    B -->|Category & Priority| C[Systemic Pattern Detector]
-    C -->|Cluster Check| D[Officer Risk Engine]
-    D -->|Real-Time Sync| E[Live Dashboard & Chatbot]
+    A[Citizen Input] -->|English / Hindi / Telugu| B[Groq Llama 3.3 70B AI Engine]
+    B -->|Structured JSON| C[Systemic Pattern Detector]
+    C -->|Cluster ID| D[Supabase Database & Officer Risk Engine]
+    D -->|Real-Time Sync| E[Live Executive Dashboard & Chatbot]
 ```
 
 1. **Intake:** Citizen submits a complaint in English, Hindi, or Telugu.
-2. **AI Extraction:** Gemini 2.5 Flash extracts category, department, priority, and named officials.
-3. **Pattern Detection:** BigQuery checks for co-located matching complaints and assigns a `cluster_id`.
+2. **AI Extraction:** Groq Llama-3.3-70B extracts category, location, department, priority, sentiment, and named officers into strict JSON.
+3. **Pattern Detection:** Supabase checks for co-located matching complaints and assigns a `cluster_id`.
 4. **Accountability Check:** If an officer is cited, the system updates their risk score and triggers a fraud alert if needed.
 5. **Real-Time Visibility:** The issue appears on the live dashboard and becomes instantly queryable via the chatbot.
 
@@ -165,17 +189,17 @@ graph LR
 
 ```mermaid
 graph TD
-    Client[React Frontend Dashboard] <-->|REST API Requests| Backend[FastAPI Backend Server]
-    Backend <-->|Structured JSON Prompts| Gemini[Google Vertex AI - Gemini 2.5 Flash]
-    Backend <-->|Live SQL Aggregations & Storage| BigQuery[Google BigQuery Warehouse]
-    BigQuery <-->|GPU Acceleration| RAPIDS[NVIDIA RAPIDS cuDF Data Pipeline]
+    Client[React 19 Frontend Dashboard] <-->|Axios REST Requests| Backend[FastAPI Async Backend Server]
+    Backend <-->|Structured JSON Prompts| Groq[Groq API - Llama 3.3 70B]
+    Backend <-->|PostgREST Table Queries| Supabase[(Supabase PostgreSQL Database)]
+    Supabase <-->|GPU Data Benchmarking| RAPIDS[NVIDIA RAPIDS cuDF Pipeline]
 ```
 
-- **React Frontend:** User interface for complaint submission, analytics, alerts, and chatbot interaction.
-- **FastAPI Backend:** Orchestrates data flow, AI inference calls, and database updates.
-- **Vertex AI (Gemini 2.5 Flash):** Handles natural language understanding, metadata extraction, and chatbot responses.
-- **Google BigQuery:** Serves as the central data warehouse storing complaints, officer risk scores, and alert logs.
-- **NVIDIA RAPIDS cuDF:** Accelerates large-scale data processing workflows for high-volume analytics.
+- **React 19 Client:** Responsive user interface with i18next multilingual support, Recharts analytics, and interactive status controls.
+- **FastAPI Backend Server:** Orchestrates asynchronous API routes, handles Groq AI calls, and manages database logic.
+- **Groq Cloud API (Llama 3.3 70B):** Powers zero-shot multi-language extraction, categorization, priority scoring, and grounded RAG chatbot queries.
+- **Supabase Database:** Central real-time relational database storing `grievances`, `officers`, and `fraud_alerts`.
+- **NVIDIA RAPIDS cuDF Engine:** Accelerates multi-million row analytics and hotspot detection with GPU parallelism.
 
 ---
 
@@ -183,36 +207,36 @@ graph TD
 
 | Endpoint | Method | Purpose | Response |
 | :--- | :--- | :--- | :--- |
-| `/submit-grievance` | `POST` | Submits raw complaint text; executes AI extraction & systemic check | Returns extracted category, priority, department, and assigned officer |
-| `/get-grievances` | `GET` | Retrieves all complaints sorted by creation timestamp | Returns a list of grievance objects with current status flags |
+| `/submit-grievance` | `POST` | Submits raw complaint text; executes Groq AI extraction & systemic check | Returns extracted category, priority, department, and assigned officer |
+| `/get-grievances` | `GET` | Retrieves all complaints from Supabase sorted by creation timestamp | Returns a list of grievance objects with current status flags |
 | `/category-stats` | `GET` | Aggregates total complaint counts grouped by category | Returns category breakdown key-value pairs for dashboard charts |
 | `/smart-hotspots` | `GET` | Identifies location + category clusters with 2+ active grievances | Returns hotspot locations, complaint counts, and cluster IDs |
 | `/api/dashboard/districts` | `GET` | Computes complaint counts and priority scores grouped by district | Returns district-level analytics and average urgency metrics |
 | `/api/alerts/corruption` | `GET` | Fetches officer risk scores, grades, and active fraud alerts | Returns list of flagged officer risk metrics and fraud alert cards |
 | `/api/alerts/systemic` | `GET` | Lists grievance clusters flagged with `is_systemic: true` | Returns active systemic issue clusters and affected locations |
-| `/chatbot` | `POST` | Processes natural language user questions using live data | Returns AI-generated answer grounded in current BigQuery state |
+| `/chatbot` | `POST` | Processes natural language user questions using live data | Returns AI-generated answer grounded in current Supabase state |
 | `/update-status` | `POST` | Updates grievance status (e.g. `Resolved`) and stamps timestamp | Returns updated grievance record confirmation |
 
 ---
 
 ## 🤖 AI / ML Workflow
 
-ResolveIQ utilizes **Google Gemini 2.5 Flash via Vertex AI** for zero-shot structured text extraction across English, Hindi, and Telugu.
+ResolveIQ utilizes **Groq Cloud API with Llama 3.3 70B** for zero-shot structured text extraction across English, Hindi, and Telugu.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                        RAW CITIZEN COMPLAINT INPUT                      │
 │                                                                         │
-│  "మా వీధిలో గత 4 రోజులుగా మంచినీటి పైప్‌లైన్ పగిలి నీరు వృధా అవుతోంది."  │
-│  (Telugu: Water pipeline broken in our street for last 4 days...)       │
+│  "Raw sewage is overflowing from a broken manhole on Ameerpet Main     │
+│   Road right near the Metro Station lift."                              │
 └────────────────────────────────────┬────────────────────────────────────┘
                                      │
                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        GEMINI 2.5 FLASH PROMPT                          │
+│                     GROQ LLAMA 3.3 70B JSON PROMPT                      │
 │                                                                         │
-│  Extract: Category, Department, Urgency, Officer Mentioned, Sentiment, │
-│  Estimated Days to Resolve. Return strict JSON.                         │
+│  Extract: category, location, priority_score (1-5), sentiment_score,   │
+│  department, mentioned_officer, predicted_resolution_days.              │
 └────────────────────────────────────┬────────────────────────────────────┘
                                      │
                                      ▼
@@ -220,13 +244,13 @@ ResolveIQ utilizes **Google Gemini 2.5 Flash via Vertex AI** for zero-shot struc
 │                      STRUCTURED JSON OUTPUT (INLINE)                    │
 │                                                                         │
 │  {                                                                      │
-│    "category": "Water Supply",                                          │
-│    "department": "Municipal Water Board",                               │
-│    "priority": "High",                                                  │
-│    "urgency_score": 0.88,                                               │
-│    "sentiment": "Negative",                                             │
-│    "officer_mentioned": null,                                           │
-│    "est_days_to_resolve": 2                                             │
+│    "category": "Sewage and Drainage",                                   │
+│    "location": "Ameerpet Main Road",                                    │
+│    "priority_score": 5,                                                 │
+│    "sentiment_score": 4,                                                │
+│    "department": "Municipal Corporation",                               │
+│    "mentioned_officer": "None",                                         │
+│    "predicted_resolution_days": 2                                       │
 │  }                                                                      │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
@@ -245,10 +269,10 @@ To demonstrate readiness for large-scale municipal or state deployments, Resolve
 | **5,000,000** | Multi-Filter + Group + Sort | `0.8177 sec` | `0.0854 sec` | 🚀 **9.6× Faster** |
 
 ![Colab Benchmark Setup](colab1.png)
-*Figure 6: NVIDIA RAPIDS GPU setup and benchmark initialization in Google Colab.*
+*Figure 8: NVIDIA RAPIDS GPU setup and benchmark initialization in Google Colab.*
 
 ![Colab Benchmark 9.6x Proof](colab2.png)
-*Figure 7: Empirical benchmark execution proving a 9.6× speedup over Pandas at 5,000,000 complaint records.*
+*Figure 9: Empirical benchmark execution proving a 9.6× speedup over Pandas at 5,000,000 complaint records.*
 
 ---
 
@@ -256,15 +280,15 @@ To demonstrate readiness for large-scale municipal or state deployments, Resolve
 
 - [ ] **Interactive GIS Mapping:** Integrate Leaflet / Mapbox heatmaps for spatial grievance density analysis.
 - [ ] **Voice Note Intake:** Support direct audio complaint filing via WhatsApp and mobile web interfaces.
-- [ ] **Multi-Modal Damage Verification:** Use Gemini Vision to automatically analyze uploaded photos of potholes or broken pipes.
+- [ ] **Multi-Modal Damage Verification:** Use Vision LLMs to automatically analyze uploaded photos of potholes or broken pipes.
 - [ ] **Predictive Maintenance:** Implement predictive ML models to detect potential infrastructure failures before citizens report them.
 
 ---
 
 ## 🥊 Challenges Faced
 
-- **Multilingual Consistency:** Parsing non-English text occasionally returned conversational responses instead of raw JSON. Fixed by enforcing strict JSON system instructions in Gemini 2.5 Flash.
-- **Real-Time Query Optimization:** Aggregating data on raw BigQuery tables incurred latency on frequent dashboard refreshes. Resolved by partitioning tables on `created_at` timestamps.
+- **Multilingual Consistency:** Parsing non-English text occasionally returned conversational responses instead of raw JSON. Fixed by enforcing strict JSON mode (`response_format={"type": "json_object"}`) in Groq API.
+- **Real-Time Query Optimization:** Aggregating data on raw SQL tables incurred latency on frequent dashboard refreshes. Resolved by indexing and optimized query execution in Supabase.
 - **GPU Memory Management:** Processing multi-million row datasets on GPU required memory allocation management to prevent Out-Of-Memory (OOM) errors during RAPIDS benchmark execution.
 
 ---
@@ -272,14 +296,15 @@ To demonstrate readiness for large-scale municipal or state deployments, Resolve
 ## 💡 Lessons Learned
 
 - **Data-Driven Governance:** Treating citizen complaints as structured telemetry provides actionable municipal insights far superior to traditional ticket queues.
-- **Zero-Shot LLM Versatility:** Modern LLMs handle multi-language metadata extraction in a single step without requiring separate translation pipelines.
+- **Zero-Shot LLM Versatility:** Modern 70B open-weights LLMs handle multi-language metadata extraction in a single step without requiring separate translation pipelines.
 - **GPU Acceleration at Scale:** NVIDIA RAPIDS cuDF significantly reduces data processing overhead for large analytical workloads.
 
 ---
 
 ## 🙏 Acknowledgements
 
-- **Google Cloud Platform** for Vertex AI (Gemini 2.5 Flash) and BigQuery resources.
+- **Groq Cloud** for fast Llama 3.3 70B inference capabilities.
+- **Supabase** for database hosting and real-time backend infrastructure.
 - **FastAPI** for the async Python backend framework.
 - **React & Recharts** for frontend web components and data visualizations.
 - **NVIDIA RAPIDS** for open-source GPU data science libraries.
